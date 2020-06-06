@@ -31,7 +31,8 @@ In order to visualize the various filters and feature maps of a neural netork we
 
 <a id='references'></a>
 ## References
-[1]<a id='1'></a> https://github.com/vdumoulin/conv_arithmetic\
+[1]<a id='1'></a> https://github.com/vdumoulin/conv_arithmetic  
+
 [2]<a id='2'></a> *Very Deep Convolutional Networks for Large-Scale Image Recognition.* Simonyan, K.,
 Zisserman, A. 2015.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://arxiv.org/abs/1409.1556
