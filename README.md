@@ -32,36 +32,27 @@ In order to visualize the various filters and feature maps of a neural netork we
 ### Filter Layers
 
 Taking a look at 3 of the 13 convolutional layers in the VGG16 model we see that there is increased depth as we move through the model. The following images illustrate each filter in the respective layers. **Note:** The filters are displayed in grayscale for readability.
-<table width="400" align="center">
-	<tbody> 
-        <tr>	
-            <td align="center"> Layer 1 Conv2d filters --> Kernel 3 x 3 - Depth 64</td>
-		</tr>
-		<tr>
-			<td width="50%" align="center"> <img src="images/conv_layer_1_filter.jpg"></td>
-		</tr>
-	</tbody>
-</table>
-<table width="400" align="center">
-	<tbody> 
-        <tr>	
-            <td align="center"> Layer 5 Conv2d filters --> Kernel 3 x 3 - Depth 256</td>
-		</tr>
-		<tr>
-			<td width="50%" align="center"> <img src="images/conv_layer_5_filter.jpg"></td>
-		</tr>
-	</tbody>
-</table>
-<table width="400" align="center">
-	<tbody> 
-        <tr>	
-            <td align="center"> Layer 10 Conv2d filters --> Kernel 3 x 3 - Depth 512</td>
-		</tr>
-		<tr>
-			<td width="50%" align="center"> <img src="images/conv_layer_10_filter.jpg"></td>
-		</tr>
-	</tbody>
-</table>
+
+<p align="center">
+<img width="250" src = "images/conv_layer_1_filter.jpg">
+</p>
+<p align="center">
+<td align="left"> Layer 1 Conv2d filters --> Kernel 3 x 3 - Depth 64</td>
+</p>
+
+<p align="center">
+<img width="250" src = "images/conv_layer_5_filter.jpg">
+</p>
+<p align="center">
+<td align="left"> Layer 5 Conv2d filters --> Kernel 3 x 3 - Depth 256</td>
+</p>
+
+<p align="center">
+<img width="250" src = "images/conv_layer_10_filter.jpg">
+</p>
+<p align="center">
+<td align="left"> Layer 10 Conv2d filters --> Kernel 3 x 3 - Depth 512</td>
+</p
 
 <a id='feature_map_vis'></a>
 ## Feature Map Visualization
