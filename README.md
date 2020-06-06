@@ -5,7 +5,7 @@ This repository is an attempt for me to visually represent the inner workings of
 ### Navigation
 * [Running Notebook Locally](#installing_locally)
 * [Filter Visualization](#filter_vis)
-* [Feature Map Visualization](#feature_map_visualization)
+* [Feature Map Visualization](#feature_map_vis)
 * [References](#referances)
 
 <a id='installing_locally'></a>
@@ -63,6 +63,20 @@ Taking a look at 3 of the 13 convolutional layers in the VGG16 model we see that
 	</tbody>
 </table>
 
+<a id='feature_map_vis'></a>
+## Feature Map Visualization
+
+When we pass an image into the pre-trained network we process it at each layer and save the respective image representation. This is essentially what the image looks like after each filter is applied. First we will pass in an adorable picture of a black lab. Yea, I know. 
+
+<p align="center">
+<img width="250" src = "images/Labrador_retriever_01.jpg">
+</p>
+
+When we pass the image through the first convolutional layer we would essentially get 64 corresponding filtered images. Let's take a look at when kernel 17 is applied to the image. **Note:** There is some preprocessing that was done which is why the image looks squished. 
+
+<p align="center">
+<img width="500" src = "images/lab_layer_1.jpg">
+</p>
 
 <a id='references'></a>
 ## References
