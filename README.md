@@ -30,26 +30,39 @@ Generally speaking, filters in a CNN are used to extract information from an ima
 In order to visualize the various filters and feature maps of a neural netork we first need to load a pre-trained network from Pytorch. We will use the VGG16<sup>[2](#1)</sup> neural network and extract each corresponding convolutional layer. We will not performing backpropagation. Instead, we will use each layer's weights to help visualize the filters used and the resulting image processing.
 
 ### Filter Layers
-<table width="500">
+
+Taking a look at 3 of the 13 convolutional layers in the VGG16 model we see that there is increased depth as we move through the model. The following images illustrate each filter in the respective layers. **Note:** The filters are displayed in grayscale for readability.
+<table width="500" align="center">
 	<tbody> 
         <tr>	
-            <td align="center"> Layer 1 </td>
-			<td align="center"> Layer 2 </td>
-			<td align="center"> Layer 10 </td>
+            <td align="center"> Layer 1 Conv2d filters --> Kernel 3 x 3 - Depth 64</td>
 		</tr>
 		<tr>
-			<td width="40%"align="center"> <img src="images/conv_layer_1_filter.jpg"></td>
-			<td width="40%" align="center"> <img src="images/conv_layer_5_filter.jpg"></td>
+			<td width="50%" align="center"> <img src="images/conv_layer_1_filter.jpg"></td>
+		</tr>
+	</tbody>
+</table>
+<table width="500" align="center">
+	<tbody> 
+        <tr>	
+            <td align="center"> Layer 5 Conv2d filters --> Kernel 3 x 3 - Depth 256</td>
+		</tr>
+		<tr>
+			<td width="50%" align="center"> <img src="images/conv_layer_5_filter.jpg"></td>
+		</tr>
+	</tbody>
+</table>
+<table width="500" align="center">
+	<tbody> 
+        <tr>	
+            <td align="center"> Layer 10 Conv2d filters --> Kernel 3 x 3 - Depth 512</td>
+		</tr>
+		<tr>
 			<td width="50%" align="center"> <img src="images/conv_layer_10_filter.jpg"></td>
 		</tr>
 	</tbody>
 </table>
 
-<!-- <p align="center">
-<img width="300" src = "images/conv_layer_1_filter.jpg">
-<img width="300" src = "images/conv_layer_5_filter.jpg">
-<img width="300" src = "images/conv_layer_10_filter.jpg">
-</p> -->
 
 <a id='references'></a>
 ## References
