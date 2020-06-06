@@ -19,7 +19,7 @@ If you are new to this, feel free to install locally and make it your own.
 <a id='filter_vis'></a>
 ## Filter Visualization
 
-Generally speaking, filters in a CNN are used to extract information from an image that is then passed through the network to make predictions. These filters are called kernels. Mathmatically they perform operations on pixels that reduce an image to basic features. Each CNN layer can have hundreds of layers (kernels). These layers make up the depth of a CNN. The following gif <sup>[1](#1)</sup> illustrates how a filter is applied to an an image:
+Generally speaking, filters in a CNN are used to extract information from an image that is then passed through the network to make predictions. These filters are called kernels. Mathmatically they perform operations on pixels that reduce an image to basic features. Each CNN layer can have hundreds of layers (kernels). These layers make up the depth of a CNN. The following gif<sup>[1](#1)</sup> illustrates how a filter is applied to an an image:
 
 <p align="center">
 <img width="250" src = "images/padding_strides.gif">
@@ -27,8 +27,21 @@ Generally speaking, filters in a CNN are used to extract information from an ima
 
 ### Model Architecture
 
-In order to visualize the various filters and feature maps of a neural netork we first need to load a pre-trained network from Pytorch. We will use the VGG16<sup>[2](#1)</sup> neural network and extract each corresponding convolutional layer. We not performing backpropagation so the 
+In order to visualize the various filters and feature maps of a neural netork we first need to load a pre-trained network from Pytorch. We will use the VGG16<sup>[2](#1)</sup> neural network and extract each corresponding convolutional layer. We will not performing backpropagation. Instead, we will use each layer's weights to help visualize the filters used and the resulting image processing.
 
+### Filter Layers
+<p align="center">
+<img width="350" src = "images/conv_layer_1_filter.jpg">
+<img width="350" src = "images/conv_layer_1_output.jpg">
+</p>
+<p align="center">
+<img width="350" src = "images/conv_layer_5_filter.jpg">
+<img width="350" src = "images/conv_layer_5_output.jpg">
+</p>
+<p align="center">
+<img width="350" src = "images/conv_layer_10_filter.jpg">
+<img width="350" src = "images/conv_layer_10_output.jpg">
+</p>
 <a id='references'></a>
 ## References
 [1]<a id='1'></a> https://github.com/vdumoulin/conv_arithmetic  
