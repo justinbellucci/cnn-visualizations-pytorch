@@ -30,18 +30,27 @@ Generally speaking, filters in a CNN are used to extract information from an ima
 In order to visualize the various filters and feature maps of a neural netork we first need to load a pre-trained network from Pytorch. We will use the VGG16<sup>[2](#1)</sup> neural network and extract each corresponding convolutional layer. We will not performing backpropagation. Instead, we will use each layer's weights to help visualize the filters used and the resulting image processing.
 
 ### Filter Layers
-<p align="center">
-<img width="350" src = "images/conv_layer_1_filter.jpg">
-<img width="350" src = "images/conv_layer_1_output.jpg">
-</p>
-<p align="center">
-<img width="350" src = "images/conv_layer_5_filter.jpg">
-<img width="350" src = "images/conv_layer_5_output.jpg">
-</p>
-<p align="center">
-<img width="350" src = "images/conv_layer_10_filter.jpg">
-<img width="350" src = "images/conv_layer_10_output.jpg">
-</p>
+<table width="500">
+	<tbody> 
+        <tr>	
+            <td align="center"> Layer 1 </td>
+			<td align="center"> Layer 2 </td>
+			<td align="center"> Layer 10 </td>
+		</tr>
+		<tr>
+			<td width="40%"align="center"> <img src="images/conv_layer_1_filter.jpg"></td>
+			<td width="40%" align="center"> <img src="images/conv_layer_5_filter.jpg"></td>
+			<td width="50%" align="center"> <img src="images/conv_layer_10_filter.jpg"></td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <p align="center">
+<img width="300" src = "images/conv_layer_1_filter.jpg">
+<img width="300" src = "images/conv_layer_5_filter.jpg">
+<img width="300" src = "images/conv_layer_10_filter.jpg">
+</p> -->
+
 <a id='references'></a>
 ## References
 [1]<a id='1'></a> https://github.com/vdumoulin/conv_arithmetic  
