@@ -6,7 +6,7 @@ This repository is an attempt for me to visually represent the inner workings of
 * [Running Notebook Locally](#installing_locally)
 * [Filter Visualization](#filter_vis)
 * [Activation Map Visualization](#activation_map_vis)
-* [Maximization Activations from Filters](#max_activations)
+* [Activation Maximization](#max_activations)
 * [References](#referances)
 
 <a id='installing_locally'></a>
@@ -119,7 +119,7 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
 </table>
 
 <a id='max_activations'></a>
-## Maximization Activations from Filters 
+## Activation Maximization 
 
 
 <a id='references'></a>
@@ -129,3 +129,9 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
 [2]<a id='2'></a> *Very Deep Convolutional Networks for Large-Scale Image Recognition.* Simonyan, K.,
 Zisserman, A. 2015.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://arxiv.org/abs/1409.1556
+
+[3]<a id='3'></a> D. Erhan, Y. Bengio, A. Courville and P. Vincent. *Visualizing higher-layer features of a deep network*  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Technical report, University of Montreal, 1341 (2009), p3.
+
+[4]<a id='4'></a> Z. Qin, F. Yu, C. Liu, and X. Chen, *How convolutional neural network see the world - A survey of   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;convolutional neural network visualization methods*. 2018. https://arxiv.org/abs/1804.11191 
