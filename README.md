@@ -5,8 +5,8 @@ This repository is an attempt for me to visually represent the inner workings of
 ### Navigation
 * [Running Notebook Locally](#installing_locally)
 * [Filter Visualization](#filter_vis)
-* [Feature Map Visualization](#feature_map_vis)
-* [More Filter Visualization](#more_filter)
+* [Activation Map Visualization](#activation_map_vis)
+* [Maximization Activations from Filters](#max_activations)
 * [References](#referances)
 
 <a id='installing_locally'></a>
@@ -49,8 +49,8 @@ Taking a look at 3 of the 13 convolutional layers in the VGG16 model we see that
 	</tbody>
 </table>
 
-<a id='feature_map_vis'></a>
-## Feature Map Visualization
+<a id='activation_map_vis'></a>
+## Activation Map Visualization
 
 When we pass an image into the pre-trained network we process it at each layer and save the respective image representation. This is essentially what the image looks like after each filter is applied. First we will pass in an adorable picture of a black lab. Yea, I know. 
 
@@ -58,7 +58,7 @@ When we pass an image into the pre-trained network we process it at each layer a
 <img width="250" src = "images/Labrador_retriever_01.jpg">
 </p>
 
-When we pass the image through the first convolutional layer we will essentially get 64 corresponding filtered images. Let's take a look at when kernel 17 is applied to the image on layer 1. **Note:** There is some preprocessing that was done which is why the image looks squished. 
+When we pass the image through the first convolutional layer we will essentially get 64 corresponding activation maps. Let's take a look at when kernel 17 is applied to the image on layer 1. **Note:** There is some preprocessing that was done which is why the image looks squished. 
 
 <p align="center">
 <img width="500" src = "images/lab_layer_1.jpg">
@@ -118,8 +118,8 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
 	</tbody>
 </table>
 
-<a id='more_filter'></a>
-## More Filter Visualization
+<a id='max_activations'></a>
+## Maximization Activations from Filters 
 
 
 <a id='references'></a>
