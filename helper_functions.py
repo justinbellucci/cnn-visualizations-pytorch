@@ -5,27 +5,31 @@
 import torch
 import numpy as np
 from PIL import Image
-import matplotlib.pyplot as plt 
 from PIL import ImageFile
-ImageFile.LOAD_TRUNCATED_IMAGES = True
+import matplotlib.pyplot as plt
+import cv2
+
+# ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 ### ----------------------------------------------
 def process_image(image, dim=224):
-    """Scales, crops (224 x 224 px), and normalizes a PIL image for a 
-       Pytorch model. Accepts both a jpg or radom nois np.ndarray. Converts
-       np.ndarray to a PIL image with shape (3, 224, 224).
+    """ Scales, crops (224 x 224 px), and normalizes a PIL image for a 
+        Pytorch model. Accepts both a jpg or radom nois np.ndarray. Converts
+        np.ndarray to a PIL image with shape (3, 224, 224).
        
-       Arguments:
-       - jpg image path or np.ndarray radom image
-       - dim (desired pixel size)
+        Arguments:
+        - jpg image path or np.ndarray radom image
+        - dim (desired pixel size)
        
-       Returns:
-       - Normalized Pytorch Tensor (image) 
+        Returns:
+        - Normalized Pytorch Tensor (image) 
     """
-    if type(image) != Image.Image:
-        im = Image.fromarray(image)
-    else:
-        im = Image.open(image)  
+ 
+    if type(image) != Image.Image
+        try: 
+            im = Image.fromarray(image)
+    # print(type(im))
+        # im = Image.open(image)  
         
     # resize image 
     width, height = im.size
@@ -58,12 +62,11 @@ def process_image(image, dim=224):
 #         image = torch.FloatTensor(image.transpose(2, 0, 1))
     image = torch.FloatTensor(image.transpose(2, 0, 1))
     return image
-
 ### ----------------------------------------------
-def show_img(img_path):
-    im = Image.open(img_path)
-    np_image = np.array(im)
-#     plt.title('{} - {}'.format(class_pred[0], dog_name).title())
-    plt.axis('off')
-    plt.imshow(np_image)
-    plt.show()
+# def show_img(img_path):
+#     im = Image.open(img_path)
+#     np_image = np.array(im)
+# #     plt.title('{} - {}'.format(class_pred[0], dog_name).title())
+#     plt.axis('off')
+#     plt.imshow(np_image)
+#     plt.show()
