@@ -10,19 +10,24 @@ from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 ### ----------------------------------------------
-def process_image(image_path, dim=224):
+def process_image(image, dim=224):
     """Scales, crops (224 x 224 px), and normalizes a PIL image for a 
-       Pytorch model.
+       Pytorch model. Accepts both a jpg or radom nois np.ndarray. Converts
+       np.ndarray to a PIL image with shape (3, 224, 224).
        
        Arguments:
-       - jpg image
-       - dim (desired pixel size
-       imag
+       - jpg image path or np.ndarray radom image
+       - dim (desired pixel size)
+       
        Returns:
-       - Normalized Pytorch Tensor (image)
+       - Normalized Pytorch Tensor (image) 
     """
+    if type(image) != Image.Image:
+        im = Image.fromarray(image)
+    else:
+        im = Image.open(image)  
+        
     # resize image 
-    im = Image.open(image_path)
     width, height = im.size
     if width > height:
         ratio = width/height
@@ -42,9 +47,8 @@ def process_image(image_path, dim=224):
     # convert to a np.array and divide by the color channel (int max)
     np_image = np.array(im)/255
     
-    # normalize color channels
-    mean = np.mean(np_image, axis=(0, 1))
-    std = np.std(np_image, axis=(0, 1))
+    mean = [0.485, 0.456, 0.406]
+    std = [0.229, 0.224, 0.225]
     image = (np_image - mean)/std
     
     # convert to a Tensor - reorder color channel so it is first. Torch requirement
