@@ -10,7 +10,6 @@ import matplotlib.pyplot as plt
 import cv2
 
 # ImageFile.LOAD_TRUNCATED_IMAGES = True
-
 ### ----------------------------------------------
 def process_image(image, dim=224):
     """ Scales, crops (224 x 224 px), and normalizes a PIL image for a 
@@ -24,12 +23,11 @@ def process_image(image, dim=224):
         Returns:
         - Normalized Pytorch Tensor (image) 
     """
- 
-    if type(image) != Image.Image
-        try: 
-            im = Image.fromarray(image)
-    # print(type(im))
-        # im = Image.open(image)  
+    # NOTE: Check ability to accept jpg images.
+    if type(image) != Image.Image: 
+        im = Image.fromarray(image)
+    else:
+        im = Image.open(image)  
         
     # resize image 
     width, height = im.size
@@ -55,11 +53,12 @@ def process_image(image, dim=224):
     std = [0.229, 0.224, 0.225]
     image = (np_image - mean)/std
     
-    # convert to a Tensor - reorder color channel so it is first. Torch requirement
 #     if torch.cuda.is_available():
 #         image = torch.cuda.FloatTensor(image.transpose(2, 0, 1))
 #     else:
 #         image = torch.FloatTensor(image.transpose(2, 0, 1))
+
+    # convert to a Tensor - reorder color channel so it is first. Torch requirement
     image = torch.FloatTensor(image.transpose(2, 0, 1))
     return image
 ### ----------------------------------------------
