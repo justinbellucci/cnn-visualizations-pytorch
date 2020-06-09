@@ -23,7 +23,7 @@ class ActivationMaximizationVis():
         self.conv_output = 0 # initialize the output of the model for loss
         
         if not os.path.exists('activ_max_imgs'):
-            os.makedirs('/activ_max_imgs')
+            os.makedirs('activ_max_imgs')
             
     def hook_cnn_layer(self):
         """ Initiates a forward hook function to save the gradients
