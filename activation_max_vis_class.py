@@ -52,8 +52,7 @@ class ActivationMaximizationVis():
         # initiate hook function
         self.hook_cnn_layer()
         # create a noisy image
-        # noisy_img = np.random.randint(125, 190, (224, 224, 3), dtype='uint8')
-        noisy_img = np.uint8(np.random.uniform(150, 180, (224, 224, 3)))
+        noisy_img = np.random.randint(125, 190, (224, 224, 3), dtype='uint8')
         # add dimension and activate requires_grad on tensor
         processed_image = process_image(noisy_img).unsqueeze_(0).requires_grad_()
         # define optimizer
