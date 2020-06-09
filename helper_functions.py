@@ -22,12 +22,12 @@ def process_image(image, dim=224):
         Returns:
         - Normalized Pytorch Tensor (image) 
     """
-    # NOTE: Check ability to accept jpg images.
-    if type(image) != Image.Image: 
+
+    if isinstance(image, (np.ndarray)):
         im = Image.fromarray(image)
     else:
-        im = Image.open(image)  
-        
+        im = Image.open(image)
+
     # resize image 
     width, height = im.size
     if width > height:
