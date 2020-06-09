@@ -42,9 +42,9 @@ Taking a look at 3 of the 13 convolutional layers in the VGG16 model we see that
 			<td width="20%" align="center"> Layer 10: 3x3 Kernel: Depth 512 </td>
 		</tr>
 		<tr>
-			<td width="20%" align="center"> <img src="images/conv_layer_1_filter.jpg"> </td>
-			<td width="20%" align="center"> <img src="images/conv_layer_5_filter.jpg"> </td>
-			<td width="20%" align="center"> <img src="images/conv_layer_10_filter.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/conv_layer_1_filter.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/conv_layer_5_filter.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/conv_layer_10_filter.jpg"> </td>
 		</tr>
 	</tbody>
 </table>
@@ -61,7 +61,7 @@ When we pass an image into the pre-trained network we process it at each layer a
 When we pass the image through the first convolutional layer we will essentially get 64 corresponding activation maps. Let's take a look at when kernel 17 is applied to the image on layer 1. **Note:** There is some preprocessing that was done which is why the image looks squished. 
 
 <p align="center">
-<img width="500" src = "images/lab_layer_1.jpg">
+<img width="500" src = "filter_imgs/lab_layer_1.jpg">
 </p>
 
 ### Processing Through Mulitple Layers
@@ -84,8 +84,8 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
 			<td width="20%" align="center"> Layer 1: Filtered Images </td>
 		</tr>
 		<tr>
-			<td width="20%" align="center"> <img src="images/conv_layer_1_filter.jpg"> </td>
-			<td width="20%" align="center"> <img src="images/conv_layer_1_output.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/conv_layer_1_filter.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/conv_layer_1_output.jpg"> </td>
 		</tr>
 	</tbody>
 </table>
@@ -97,9 +97,9 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
             <td width="20%" align="center"> Layer 6</td>
 		</tr>
 		<tr>
-			<td width="20%" align="center"> <img src="images/lab_layer_2.jpg"> </td>
-			<td width="20%" align="center"> <img src="images/lab_layer_2.jpg"> </td>
-            <td width="20%" align="center"> <img src="images/lab_layer_6.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/lab_layer_2.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/lab_layer_2.jpg"> </td>
+            <td width="20%" align="center"> <img src="filter_imgs/lab_layer_6.jpg"> </td>
 		</tr>
 	</tbody>
 </table>
@@ -111,9 +111,9 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
             <td width="20%" align="center"> Layer 12</td>
 		</tr>
 		<tr>
-			<td width="20%" align="center"> <img src="images/lab_layer_8.jpg"> </td>
-			<td width="20%" align="center"> <img src="images/lab_layer_10.jpg"> </td>
-            <td width="20%" align="center"> <img src="images/lab_layer_12.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/lab_layer_8.jpg"> </td>
+			<td width="20%" align="center"> <img src="filter_imgs/lab_layer_10.jpg"> </td>
+            <td width="20%" align="center"> <img src="filter_imgs/lab_layer_12.jpg"> </td>
 		</tr>
 	</tbody>
 </table>
@@ -121,6 +121,85 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
 <a id='max_activations'></a>
 ## Activation Maximization 
 
+Bla bla bla. Write some stuff here.
+
+<p align="center">
+<img width="250" src = "filter_imgs/01_noisy_image.jpg">
+</p>
+
+### The Algorithm
+
+Write some stuff here.
+
+### Layer Vis
+Taking a look at the first few layers you can see...
+<table border=0 width="800px" align="center">
+	<tbody> 
+    <tr>		
+            <td width="5%" align="center"> Layer 1 - Filter 1</td>
+			<td width="5%" align="center"> Layer 1 - Filter 5</td>
+            <td width="5%" align="center"> Layer 1 - Filter 6</td>
+			<td width="5%" align="center"> Layer 1 - Filter 6</td>
+		</tr>
+		<tr>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l1_f1_iter31.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l1_f5_iter21.jpg"> </td>
+            <td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l1_f6_iter31.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l1_f55_iter41.jpg"> </td>
+		</tr>
+	</tbody>
+</table>
+Now if we take a look more layers you can see...
+<table border=0 width="800px" align="center">
+	<tbody> 
+    <tr>		
+            <td width="5%" align="center"> Layer 3 - Filter 1</td>
+			<td width="5%" align="center"> Layer 3 - Filter 5</td>
+            <td width="5%" align="center"> Layer 3 - Filter 28</td>
+			<td width="5%" align="center"> Layer 3 - Filter 38</td>
+		</tr>
+		<tr>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l3_f1_iter31.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l3_f5_iter41.jpg"> </td>
+            <td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l3_f28_iter31.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l3_f38_iter31.jpg"> </td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=0 width="800px" align="center">
+	<tbody> 
+    <tr>		
+            <td width="5%" align="center"> Layer 10 - Filter 5</td>
+			<td width="5%" align="center"> Layer 10 - Filter 10</td>
+            <td width="5%" align="center"> Layer 10 - Filter 65</td>
+			<td width="5%" align="center"> Layer 10 - Filter 165</td>
+		</tr>
+		<tr>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l10_f5_iter41.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l10_f10_iter51.jpg"> </td>
+            <td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l10_f65_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l10_f165_iter51.jpg"> </td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=0 width="800px" align="center">
+	<tbody> 
+    <tr>		
+            <td width="5%" align="center"> Layer 12 - Filter 5</td>
+			<td width="5%" align="center"> Layer 12 - Filter 10</td>
+            <td width="5%" align="center"> Layer 12 - Filter 65</td>
+			<td width="5%" align="center"> Layer 12 - Filter 165</td>
+		</tr>
+		<tr>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l12_f28_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l12_f68_iter51.jpg"> </td>
+            <td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l12_f168_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l12_f178_iter51.jpg"> </td>
+		</tr>
+	</tbody>
+</table>
 
 <a id='references'></a>
 ## References
