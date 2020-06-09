@@ -89,6 +89,7 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
 		</tr>
 	</tbody>
 </table>
+
 <table border=0 width="800px" align="center">
 	<tbody> 
     <tr>		
@@ -103,6 +104,7 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
 		</tr>
 	</tbody>
 </table>
+
 <table border=0 width="800px" align="center">
 	<tbody> 
     <tr>		
@@ -121,18 +123,22 @@ The depth of Layer 1 is 64. You can see how each filter extracts different detai
 <a id='max_activations'></a>
 ## Activation Maximization 
 
-Bla bla bla. Write some stuff here.
+Activation Maximization was first proposed by Erhan et al.<sup>[[3]](#3)</sup> in 2009 as a way to communicate CNN behavior. Specifically as a way to intepret or visualize learned feature maps. This learned feature map can be represented by an active state of particular neurons. By looking at the maximimum activation of particular neurons we can visualize what patters are larned in particular filters. 
+
+### The Algorithm
+
+We start with a pretrained Vgg16 model and a noisy image as seen below. This image is passed through the network. At a particular layer the gradient with respect to the noisy image is calculated at each neuron.<sup>[[4]](#4)</sup> This is calculted using backpropagation, while keeping the parameters of the model fixed. The `hook_fn` in the `ActivationMaximizationVis()` class captures the calculated gradients. Each pixel in the original noisy image is then iteratively changed to maximize the activation of the neuron. In otherwords, each pixel in the noisy image is iteratively changed to push the gradient to a maximum for that particular value. The pixel values are updated until a desired image is found. 
 
 <p align="center">
 <img width="250" src = "filter_imgs/01_noisy_image.jpg">
 </p>
 
-### The Algorithm
-
-Write some stuff here.
-
 ### Layer Vis
-Taking a look at the first few layers you can see...
+
+We can visualize the activation map of each layer after a noisy image is passed through the network. Using the activation maximization technique we can see that patterns emerge at each layer/filter combination. If you look at the earlier layers in the network you can see that simplier patterns emerge. We start to notice that the activation map pulls out simpler patters and colors. Vertical and horizontal elements can be seen. 
+
+As we move deeper in the network you can see that more complex patters emerge. Some of the activation maps of later layers look like trees, eyes, and feathers. Well, at least that's what it looks like to me. We all may see something different.  
+
 <table border=0 width="800px" align="center">
 	<tbody> 
     <tr>		
@@ -150,6 +156,7 @@ Taking a look at the first few layers you can see...
 	</tbody>
 </table>
 Now if we take a look more layers you can see...
+
 <table border=0 width="800px" align="center">
 	<tbody> 
     <tr>		
