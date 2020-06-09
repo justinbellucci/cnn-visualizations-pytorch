@@ -201,6 +201,57 @@ Now if we take a look more layers you can see...
 	</tbody>
 </table>
 
+<table border=0 width="800px" align="center">
+	<tbody> 
+    <tr>		
+            <td width="5%" align="center"> Layer 14 - Filter 28</td>
+			<td width="5%" align="center"> Layer 14 - Filter 58</td>
+            <td width="5%" align="center"> Layer 14 - Filter 158</td>
+			<td width="5%" align="center"> Layer 14 - Filter 178</td>
+		</tr>
+		<tr>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l14_f28_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l14_f58_iter51.jpg"> </td>
+            <td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l14_f158_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l14_f178_iter51.jpg"> </td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=0 width="800px" align="center">
+	<tbody> 
+    <tr>		
+            <td width="5%" align="center"> Layer 15 - Filter 40</td>
+			<td width="5%" align="center"> Layer 15 - Filter 65</td>
+            <td width="5%" align="center"> Layer 15 - Filter 165</td>
+			<td width="5%" align="center"> Layer 15 - Filter 220</td>
+		</tr>
+		<tr>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l15_f40_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l15_f65_iter51.jpg"> </td>
+            <td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l15_f165_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l15_f220_iter51.jpg"> </td>
+		</tr>
+	</tbody>
+</table>
+
+<table border=0 width="800px" align="center">
+	<tbody> 
+    <tr>		
+            <td width="5%" align="center"> Layer 16 - Filter 17</td>
+			<td width="5%" align="center"> Layer 16 - Filter 128</td>
+            <td width="5%" align="center"> Layer 16 - Filter 156</td>
+			<td width="5%" align="center"> Layer 16 - Filter 157</td>
+		</tr>
+		<tr>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l16_f17_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l16_f128_iter51.jpg"> </td>
+            <td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l16_f156_iter51.jpg"> </td>
+			<td width="5%" align="center"> <img src="activ_max_imgs/am_vis_l16_f157_iter41.jpg"> </td>
+		</tr>
+	</tbody>
+</table>
+
 <a id='references'></a>
 ## References
 [1]<a id='1'></a> https://github.com/vdumoulin/conv_arithmetic  
