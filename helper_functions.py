@@ -47,17 +47,9 @@ def process_image(image, dim=224):
     
     # convert to a np.array and divide by the color channel (int max)
     np_image = np.array(im)/255
-    
     mean = [0.485, 0.456, 0.406]
     std = [0.229, 0.224, 0.225]
     image = (np_image - mean)/std
-    
-    # Support for cuda
-#     if torch.cuda.is_available():
-#         image = torch.cuda.FloatTensor(image.transpose(2, 0, 1))
-#     else:
-#         image = torch.FloatTensor(image.transpose(2, 0, 1))
-
     # convert to a Tensor - reorder color channel so it is first. Torch requirement
     image = torch.FloatTensor(image.transpose(2, 0, 1))
     return image
