@@ -8,9 +8,7 @@ import os
 from PIL import Image
 from PIL import ImageFile
 import matplotlib.pyplot as plt
-import cv2
 
-# ImageFile.LOAD_TRUNCATED_IMAGES = True
 ### ----------------------------------------------
 def process_image(image, dim=224):
     """ Scales, crops (224 x 224 px), and normalizes a PIL image for a 
@@ -54,6 +52,7 @@ def process_image(image, dim=224):
     std = [0.229, 0.224, 0.225]
     image = (np_image - mean)/std
     
+    # Support for cuda
 #     if torch.cuda.is_available():
 #         image = torch.cuda.FloatTensor(image.transpose(2, 0, 1))
 #     else:
@@ -85,5 +84,17 @@ def rebuild_image(tensor):
 
 
 def save_image(img, path):
-    im = Image.fromarray(img)
-    im.save(path)
+    """ Displays and saves the processsed image from the 
+        given layer/filter number.
+
+        Arguments:
+            - image (np.ndarray)
+            - path (string) save path
+    """
+    plt.figure(figsize=[2,2])
+    plt.imshow(img)
+    plt.axis('off')
+    plt.tight_layout(pad=0.5, h_pad=0, w_pad=0)
+    plt.savefig(path, dpi=150)
+    plt.show()  
+    
