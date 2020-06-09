@@ -4,6 +4,7 @@
 
 import torch
 import numpy as np
+import os
 from PIL import Image
 from PIL import ImageFile
 import matplotlib.pyplot as plt
@@ -72,22 +73,17 @@ def rebuild_image(tensor):
             - tensor (torch.tensor with shape = (1, 3, w, h)
         Returns:
             - image (np.ndarray)
-    
     """
     np_image = tensor.detach().numpy() # convert tensor to nparray
     np_image = np_image.squeeze(0) # reduce size of tensor
     np_image = np_image.transpose(1, 2, 0) # reorder color channel 
     mean = np.array([0.485, 0.456, 0.406])
     std = np.array([0.229, 0.224, 0.225])
-    image = np_image * std + mean # 
+    image = (np_image * std + mean)  # 
 
     return image
 
 
-# def show_img(img_path):
-#     im = Image.open(img_path)
-#     np_image = np.array(im)
-# #     plt.title('{} - {}'.format(class_pred[0], dog_name).title())
-#     plt.axis('off')
-#     plt.imshow(np_image)
-#     plt.show()
+def save_image(img, path):
+    im = Image.fromarray(img)
+    im.save(path)
