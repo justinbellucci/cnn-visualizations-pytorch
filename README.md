@@ -11,11 +11,17 @@ This repository is an attempt for me to visually represent the inner workings of
 
 <a id='installing_locally'></a>
 ## Installing Locally
-If you are new to this, feel free to install locally and make it your own.
-1. Install dependencies (I recommended that you create an environment in Conda-Python3)  
->`pip install requirments.txt`
+If would like to tinker feel free to install locally and make it your own.
+
+1. Install dependencies. I generally use Conda for my environment and package management. 
+
+	>`conda install -c conda-forge jupyterlab`  
+
+	>`pip install requirments.txt` 
+
 2. The following Jupyter notebooks outline various visualization methods:
-    * `cnn_filter_visualizations.ipynb` Jupyter notebook 
+    * `cnn_filter_vis.ipynb` Jupyter notebook 
+	* `max_activations_vis.ipynb` Jupyter notebook 
 
 <a id='filter_vis'></a>
 ## Filter Visualization
