@@ -131,7 +131,6 @@ We start with a pretrained Vgg16 model and a noisy image as seen below. This ima
 
 <p align="center">
 <img width="250" src = "filter_imgs/01_noisy_image.jpg">
-<img width="70" src = "images/right_arrow.png">
 <img width="250" src = "activ_max_imgs/am_vis_l15_f220_iter51.jpg">
 </p>
 
