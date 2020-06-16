@@ -41,6 +41,13 @@ class ActivationMaximizationVis():
         """
         def hook_fn(module, grad_in, grad_out):
             self.conv_output = grad_out[0, self.cnn_filter]
+            print('---- conv out -----')
+            print(type(self.conv_output))
+            print(self.conv_output.shape)
+            print(grad_out.shape)
+            print(grad_out[0, self.cnn_filter])
+            print('\n----- grad in ------')
+            print(grad_in[0][0][0])
             # saving the number of filters in that layer
             self.num_filters = grad_out.shape[1]
         self.model[self.cnn_layer].register_forward_hook(hook_fn)
@@ -72,13 +79,15 @@ class ActivationMaximizationVis():
             # self.conv_output = x[0, self.cnn_filter]
             # loss function according to Erhan et al. (2009)
             loss = -torch.mean(self.conv_output)
+            print(loss.shape)
+            print(loss.data)
             loss.backward() # calculate gradients
             optimizer.step() # update weights
             self.layer_img = rebuild_image(processed_image) # reconstruct image
             
             print('Epoch {}/{} --> Loss {:.3f}'.format(e+1, self.epochs, loss.data.numpy()))
 
-            if e % 10 == 0:
+            if e % 5 == 0:
                 img_path = 'activ_max_imgs/am_vis_l' + str(self.cnn_layer) + \
                     '_f' + str(self.cnn_filter) + '_iter' + str(e+1) + '.jpg'
                 save_image(self.layer_img, img_path)
